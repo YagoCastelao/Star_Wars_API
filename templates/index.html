@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarWars Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-cover bg-center bg-gray-100 flex items-center justify-center min-h-screen" style="background-image: url('https://steamuserimages-a.akamaihd.net/ugc/179414147123201170/AC21422F02A7083B972AE007972B0433E4717BFD/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false');">
+    <div class="absolute top-0 left-0 p-4">
+        <img src="https://pngimg.com/d/star_wars_logo_PNG10.png" alt="Star Wars Logo" class="w-32"> <!-- 80px = w-20 no Tailwind -->
+    </div>
+    <div class="bg-white p-8 rounded-lg shadow-lg text-center max-w-2xl w-full">
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">Bem-vindo ao StarWars Blog!</h1>
+        <p class="text-gray-600 mb-8">Explore os dados da galáxia:</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <a href="/people" class="bg-blue-500 text-white py-3 px-6 rounded-lg hover:bg-blue-600 transition duration-300">
+                Listar Personagens
+            </a>
+            <a href="/planets" class="bg-green-500 text-white py-3 px-6 rounded-lg hover:bg-green-600 transition duration-300">
+                Listar Planetas
+            </a>
+            <a href="/users" class="bg-purple-500 text-white py-3 px-6 rounded-lg hover:bg-purple-600 transition duration-300">
+                Listar Usuários
+            </a>
+            <a href="/users/favorites" class="bg-yellow-500 text-white py-3 px-6 rounded-lg hover:bg-yellow-600 transition duration-300">
+                Ver Favoritos
+            </a>
+        </div>
+
+        <div class="mt-12">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Como Adicionar/Remover Favoritos</h2>
+            <p class="text-gray-600 mb-4">
+                Use o Postman para adicionar ou remover favoritos. Aqui estão os endpoints:
+            </p>
+            <div class="text-left bg-gray-50 p-4 rounded-lg">
+                <p class="text-gray-700"><strong>POST:</strong> <code>/favorite/planet/&lt;planet_id&gt;</code></p>
+                <p class="text-gray-700"><strong>POST:</strong> <code>/favorite/people/&lt;people_id&gt;</code></p>
+                <p class="text-gray-700"><strong>DELETE:</strong> <code>/favorite/planet/&lt;planet_id&gt;</code></p>
+                <p class="text-gray-700"><strong>DELETE:</strong> <code>/favorite/people/&lt;people_id&gt;</code></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

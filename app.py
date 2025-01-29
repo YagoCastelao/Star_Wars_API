@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from models import db, User, Planet, People, Favorite
 
 app = Flask(__name__)
@@ -12,7 +12,7 @@ with app.app_context():
 
 @app.route('/')
 def home():
-    return "Bem-vindo ao StarWars Blog!"
+    return render_template('index.html')
 
 
 @app.route('/people', methods=['GET'])
