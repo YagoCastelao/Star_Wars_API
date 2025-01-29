@@ -59,7 +59,7 @@ def list_favorites():
     user = User.query.get(1)
     if user:
         favorites = Favorite.query.filter_by(user_id=user.id).all()
-        return jsonify([{'id': f.id, 'planet_id': favorite.planet_id, 'people_id': favorite.people_id} for favorite in favorites])
+        return jsonify([{'id': favorite.id, 'planet_id': favorite.planet_id, 'people_id': favorite.people_id} for favorite in favorites])
     return jsonify({'error': 'User not found'}), 404
 
 
