@@ -18,7 +18,7 @@ def home():
 @app.route('/people', methods=['GET'])
 def list_people():
     people = People.query.all()
-    return jsonify([{'id': p.id, 'name': p.name} for p in people])
+    return jsonify([{'id': person.id, 'name': person.name} for person in people])
 
 
 
@@ -34,7 +34,7 @@ def get_person(people_id):
 @app.route('/planets', methods=['GET'])
 def list_planets():
     planets = Planet.query.all()
-    return jsonify([{'id': p.id, 'name': p.name} for p in planets])
+    return jsonify([{'id': planet.id, 'name': planet.name} for planet in planets])
 
 
 
@@ -50,7 +50,7 @@ def get_planet(planet_id):
 @app.route('/users', methods=['GET'])
 def list_users():
     users = User.query.all()
-    return jsonify([{'id': u.id, 'username': u.username} for u in users])
+    return jsonify([{'id': user.id, 'username': user.username} for user in users])
 
 
 
@@ -59,7 +59,7 @@ def list_favorites():
     user = User.query.get(1)
     if user:
         favorites = Favorite.query.filter_by(user_id=user.id).all()
-        return jsonify([{'id': f.id, 'planet_id': f.planet_id, 'people_id': f.people_id} for f in favorites])
+        return jsonify([{'id': f.id, 'planet_id': favorite.planet_id, 'people_id': favorite.people_id} for favorite in favorites])
     return jsonify({'error': 'User not found'}), 404
 
 
